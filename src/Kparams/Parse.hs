@@ -11,12 +11,14 @@ word (' ':xs)  Nothing = ([], xs)
 word ('\t':xs) Nothing = ([], xs)
 word ('\n':xs) Nothing = ([], xs)
 word (x:xs)    Nothing = (progress, rem)
-  where quot = x == '"' || x == '\''
-        (wurd, rem) = word xs (if quot then Just x else Nothing)
-        progress = if quot then wurd else x:wurd
+  where special = x == '"' || x == '\'' || x == '\\'
+        (wurd, rem) = word xs (if special then Just x else Nothing)
+        progress = if special then wurd else x:wurd
 
 word ('\'':xs) (Just '\'') = word xs Nothing
 word ('"':xs)  (Just '"')  = word xs Nothing
+word (x:xs)    (Just '\\') = (x:wurd, rem)
+  where (wurd, rem) = word xs Nothing
 word (x:xs)    q           = (x:wurd, rem)
   where (wurd, rem) = word xs q
 

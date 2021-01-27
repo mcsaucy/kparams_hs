@@ -37,13 +37,15 @@ cases' = [
   "quoting weirdly embedded"
     ~: "find foobar foobar=foo\" \"bar"
     ~: Just "foo bar"
-    ~=? (find "foobar" "foobar=foo\" \"bar")]
-{- TODO(mcsaucy): add an escaping test case when we support it.
+    ~=? (find "foobar" "foobar=foo\" \"bar"),
   "escaping"
     ~: "find foobar foobar=foo\\ bar"
     ~: Just "foo bar"
     ~=? (find "foobar" "foobar=foo\\ bar"),
--}
+  "escaping"
+    ~: "find foobar \"foobar=foo\\\" SOMETHING ELSE\""
+    ~: Just "foo\""
+    ~=? (find "foobar" "foobar=foo\\\" SOMETHING ELSE")]
 
 main :: IO()
 main = do
