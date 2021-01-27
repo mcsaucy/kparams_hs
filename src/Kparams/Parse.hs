@@ -6,10 +6,10 @@ module Kparams.Parse where
 word :: String -> Maybe Char -> (String, String)
 word []        _       = ([], [])
 
-word (x:[])    Nothing = ([x], [])
 word (' ':xs)  Nothing = ([], xs)
 word ('\t':xs) Nothing = ([], xs)
 word ('\n':xs) Nothing = ([], xs)
+word (x:[])    Nothing = ([x], [])
 word (x:xs)    Nothing = (progress, rem)
   where special = x == '"' || x == '\'' || x == '\\'
         (wurd, rem) = word xs (if special then Just x else Nothing)

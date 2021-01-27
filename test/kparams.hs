@@ -10,6 +10,10 @@ cases' = [
     ~: "find NOTHING BOOT_IMAGE=..."
     ~: Nothing
     ~=? (find "NOTHING" "BOOT_IMAGE=blahblah"),
+  "simple"
+    ~: "find foo foo=bar\\n"
+    ~: Just "bar"
+    ~=? (find "foo" "foo=bar\n"),
   "multi"
     ~: "find SOMETHING \"BOOT_IMAGE=... SOMETHING\""
     ~: Just ""
