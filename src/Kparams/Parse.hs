@@ -1,4 +1,4 @@
-import qualified Data.List as L
+module Kparams.Parse where
 
 -- word extracts the first "word" from the input,
 -- returning the word itself and what's left.
@@ -44,7 +44,7 @@ find want have = if length matching > 0
   where varpairs = map var (wordsplit have)
         isOurParam vp = want == fst vp
         matching = filter isOurParam varpairs
-
+{-
 main :: IO ()
 main = do
   putStrLn $ "root: " ++ case (find "root" txt) of
@@ -52,3 +52,4 @@ main = do
                            Just p -> p
   where txt = "root=foo'bar baz' lol this is great"
         split = wordsplit txt
+        -}
