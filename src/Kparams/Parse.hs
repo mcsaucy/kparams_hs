@@ -4,8 +4,9 @@ module Kparams.Parse where
 -- returning the word itself and what's left.
 -- We split on unquoted, unescaped spaces.
 word :: String -> Maybe Char -> (String, String)
-word (x:[])    _       = ([x], [])
+word []        _       = ([], [])
 
+word (x:[])    Nothing = ([x], [])
 word (' ':xs)  Nothing = ([], xs)
 word ('\t':xs) Nothing = ([], xs)
 word ('\n':xs) Nothing = ([], xs)
