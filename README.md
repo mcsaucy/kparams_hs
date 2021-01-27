@@ -15,3 +15,9 @@ Check out `test/` to see examples of what we can extract.
 ## Usage
 
 `$ kparams PARAM_NAME [DEFAULT_VALUE]`
+
+## What's the difference between the shell implementation of kparams and this?
+
+They should be functionally similar. Error messages will differ, although they
+should error under the same conditions. Most significantly, this version is
+hundreds of times faster.
