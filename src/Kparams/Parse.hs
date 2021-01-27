@@ -44,12 +44,3 @@ find want have = if length matching > 0
   where varpairs = map var (wordsplit have)
         isOurParam vp = want == fst vp
         matching = filter isOurParam varpairs
-{-
-main :: IO ()
-main = do
-  putStrLn $ "root: " ++ case (find "root" txt) of
-                           Nothing -> "nil"
-                           Just p -> p
-  where txt = "root=foo'bar baz' lol this is great"
-        split = wordsplit txt
-        -}
