@@ -5,10 +5,10 @@ cabal-version:       >=1.10
 
 name:                kparams-hs
 version:             0.1.0.0
--- synopsis:
+synopsis:            Parses values from /proc/cmdline.
 -- description:
--- bug-reports:
--- license:
+bug-reports:         https://github.com/mcsaucy/kparams_hs/issues
+license:             MIT
 license-file:        LICENSE
 author:              Josh McSavaney
 maintainer:          me@mcsau.cc
@@ -24,11 +24,13 @@ executable kparams
   build-depends:       base >=4.13 && <4.14
   hs-source-dirs:      src
   default-language:    Haskell2010
+
 library kparams-lib
   hs-source-dirs: src
   exposed-modules:
     Kparams.Parse
   build-depends:       base >=4.13 && <4.14
+  default-language:    Haskell2010
 
 test-suite test-kparams
   type: exitcode-stdio-1.0
@@ -37,4 +39,4 @@ test-suite test-kparams
     HUnit,
     kparams-lib
   main-is: test/kparams.hs
-
+  default-language:    Haskell2010
