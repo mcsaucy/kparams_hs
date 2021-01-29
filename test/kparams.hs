@@ -1,6 +1,6 @@
 import Test.HUnit
 import System.Exit
-import Kparams.Parse
+import Kparams.Internal (find)
 cases' = [
   "simple"
     ~: "find BOOT_IMAGE BOOT_IMAGE=..."

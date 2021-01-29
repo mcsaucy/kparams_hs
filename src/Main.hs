@@ -3,7 +3,7 @@ module Main where
 import System.Environment
 import System.IO
 import Control.Monad
-import Kparams.Parse
+import Kparams.Internal
 
 argParse :: [String] -> (String, Maybe String)
 argParse (name:[])     = (name, Nothing)

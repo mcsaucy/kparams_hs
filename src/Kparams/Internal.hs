@@ -1,4 +1,4 @@
-module Kparams.Parse where
+module Kparams.Internal where
 
 -- word extracts the first "word" from the input,
 -- returning the word itself and what's left.
