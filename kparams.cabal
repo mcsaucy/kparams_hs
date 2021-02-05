@@ -42,4 +42,4 @@ test-suite test-kparams
 
 source-repository head
   type:     git
-  location: git://github.com/mcsaucy/kparams_hs.git
+  location: https://github.com/mcsaucy/kparams_hs.git
