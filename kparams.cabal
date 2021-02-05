@@ -6,7 +6,7 @@ cabal-version:       2.0
 name:                kparams
 version:             0.1.0.0
 synopsis:            Extracts values from /proc/cmdline.
-description:         Extracts values from /proc/cmdline, honoring quotes and \ sequences.
+description:         Extracts values from @\/proc\/cmdline@, honoring quotes and @\\@ sequences.
 bug-reports:         https://github.com/mcsaucy/kparams_hs/issues
 license:             MIT
 license-file:        LICENSE
